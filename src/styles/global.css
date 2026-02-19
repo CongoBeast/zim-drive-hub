@@ -1,0 +1,152 @@
+/* ═══════════════════════════════════════════════════════
+   ZimDriveHub — Global Styles & Theme System
+   Bootstrap is loaded via CDN/npm; we override its vars
+   using the CSS custom properties set by AuthContext.
+   ═══════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&display=swap');
+
+/* ─── CSS variable defaults (pre-login / neutral) ─── */
+:root {
+  --zd-primary: #4f46e5;
+  --zd-primary-dark: #3730a3;
+  --zd-primary-light: #818cf8;
+  --zd-accent: #06b6d4;
+  --zd-bg: #f8fafc;
+  --zd-surface: #ffffff;
+  --zd-surface-alt: #f1f5f9;
+  --zd-border: #e2e8f0;
+  --zd-text: #1e293b;
+  --zd-text-muted: #64748b;
+  --zd-text-on-primary: #ffffff;
+  --zd-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --zd-nav-bg: #1e293b;
+  --zd-sidebar-bg: #f8fafc;
+}
+
+/* ─── Admin dark theme overrides ─── */
+[data-theme="admin"] {
+  color-scheme: dark;
+}
+
+[data-theme="admin"] body {
+  background-color: var(--zd-bg);
+}
+
+/* ─── Base resets ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--zd-bg);
+  color: var(--zd-text);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Bootstrap overrides using our CSS vars ─── */
+.btn-primary {
+  background: var(--zd-gradient) !important;
+  border-color: var(--zd-primary) !important;
+}
+
+.btn-primary:hover {
+  background: var(--zd-primary-dark) !important;
+  filter: brightness(1.05);
+}
+
+.form-control {
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus {
+  border-color: var(--zd-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.2) !important;
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Admin theme input focus */
+[data-theme="admin"] .form-control {
+  color-scheme: dark;
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--zd-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--zd-text-muted);
+}
+
+/* ─── Theme transition ─── */
+*,
+.card,
+.rounded-3,
+.rounded-2 {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ─── Table in dark admin theme ─── */
+[data-theme="admin"] .table {
+  color: var(--zd-text);
+}
+
+[data-theme="admin"] .table thead th {
+  background-color: transparent;
+  color: var(--zd-text-muted);
+}
+
+/* ─── Utility: gradient text ─── */
+.text-gradient {
+  background: var(--zd-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Spinner theme color ─── */
+.spinner-border {
+  color: var(--zd-primary) !important;
+}
+
+/* ─── Animation ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.35s ease forwards;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
