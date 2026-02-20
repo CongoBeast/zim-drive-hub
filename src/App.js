@@ -8,11 +8,21 @@ import './index.css';
 // Pages
 import LoginPage from "./pages/LoginPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import AdminBookingsPage from "./pages/admin/AdminBookingsPage";
+import AdminPaymentsPage from "./pages/admin/AdminPaymentsPage";
 import InstructorDashboard from "./pages/instructor/InstructorDashboard";
+import InstructorSchedule from "./pages/instructor/InstructorSchedule";
+import InstructorLessons from "./pages/instructor/InstructorLessons";
+import InstructorNotifications from "./pages/instructor/InstructorNotifications";
 import StudentDashboard from "./pages/student/StudentDashboard";
 import StudentsPage from "./pages/ManageStudents";
 import InstructorsPage from "./pages/ManageInstructors";
 import InstructorDetails from "./pages/InstructorProfile";
+import BookLesson from "./pages/student/BookLesson";
+import LessonBalance from "./pages/student/LessonBalance";
+import Notifications from "./pages/Notifications";
+import ChangeRequests from "./pages/instructor/ChangeRequests";
+
 
 // Placeholder for unbuilt pages
 function Placeholder({ title }) {
@@ -84,8 +94,8 @@ export default function App() {
           <Route path="/admin/students" element={<StudentsPage title="Students Management" />} />
           <Route path="/admin/instructors" element={<InstructorsPage title="Instructors Management" />} />
           <Route path="/admin/instructor-profile" element={<InstructorDetails title="Instructors Management" />} />
-          <Route path="/admin/bookings" element={<PlaceholderPage title="Bookings Management" />} />
-          <Route path="/admin/payments" element={<PlaceholderPage title="Payments & Balances" />} />
+          <Route path="/admin/bookings" element={<AdminBookingsPage title="Bookings Management" />} />
+          <Route path="/admin/payments" element={<AdminPaymentsPage title="Payments & Balances" />} />
           <Route path="/admin/approvals" element={<PlaceholderPage title="Approvals Queue" />} />
           <Route path="/admin/settings" element={<PlaceholderPage title="System Settings" />} />
 
@@ -98,10 +108,10 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/instructor/schedule" element={<PlaceholderPage title="My Schedule" />} />
-          <Route path="/instructor/lessons" element={<PlaceholderPage title="Lessons" />} />
-          <Route path="/instructor/change-requests" element={<PlaceholderPage title="Change Requests" />} />
-          <Route path="/instructor/notifications" element={<PlaceholderPage title="Notifications" />} />
+          <Route path="/instructor/schedule" element={<InstructorSchedule title="My Schedule" />} />
+          <Route path="/instructor/lessons" element={<InstructorLessons title="Lessons" />} />
+          <Route path="/instructor/change-requests" element={<ChangeRequests title="Change Requests" />} />
+          <Route path="/instructor/notifications" element={<InstructorNotifications title="Driver Notifications" />} />
 
           {/* ── Student routes ────────────────────────────── */}
           <Route
@@ -112,10 +122,10 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/student/book" element={<PlaceholderPage title="Book a Lesson" />} />
-          <Route path="/student/schedule" element={<PlaceholderPage title="My Schedule" />} />
-          <Route path="/student/balance" element={<PlaceholderPage title="Lesson Balance" />} />
-          <Route path="/student/notifications" element={<PlaceholderPage title="Notifications" />} />
+          <Route path="/student/book" element={<BookLesson title="Book a Lesson" />} />
+          <Route path="/student/schedule" element={<LessonBalance title="My Schedule" />} />
+          <Route path="/student/balance" element={<LessonBalance title="Lesson Balance" />} />
+          <Route path="/student/notifications" element={<Notifications title="Notifications" />} />
 
           {/* Catch-all */}
           <Route path="*" element={<Navigate to="/" replace />} />
