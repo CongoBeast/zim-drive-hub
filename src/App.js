@@ -10,12 +10,14 @@ import LoginPage from "./pages/LoginPage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminBookingsPage from "./pages/admin/AdminBookingsPage";
 import AdminPaymentsPage from "./pages/admin/AdminPaymentsPage";
+import AdminApprovals from "./pages/admin/AdminApprovals";
+import FleetManagementPage from "./pages/admin/FleetManagementPage";
 import InstructorDashboard from "./pages/instructor/InstructorDashboard";
 import InstructorSchedule from "./pages/instructor/InstructorSchedule";
 import InstructorLessons from "./pages/instructor/InstructorLessons";
 import InstructorNotifications from "./pages/instructor/InstructorNotifications";
 import StudentDashboard from "./pages/student/StudentDashboard";
-import StudentsPage from "./pages/ManageStudents";
+import StudentsPage from "./pages/admin/ManageStudents";
 import InstructorsPage from "./pages/ManageInstructors";
 import InstructorDetails from "./pages/InstructorProfile";
 import BookLesson from "./pages/student/BookLesson";
@@ -96,8 +98,11 @@ export default function App() {
           <Route path="/admin/instructor-profile" element={<InstructorDetails title="Instructors Management" />} />
           <Route path="/admin/bookings" element={<AdminBookingsPage title="Bookings Management" />} />
           <Route path="/admin/payments" element={<AdminPaymentsPage title="Payments & Balances" />} />
-          <Route path="/admin/approvals" element={<PlaceholderPage title="Approvals Queue" />} />
+          <Route path="/admin/approvals" element={<AdminApprovals title="Approvals Queue" />} />
+          <Route path="/admin/fleet-management" element={<FleetManagementPage title="Fleet Management" />} />
           <Route path="/admin/settings" element={<PlaceholderPage title="System Settings" />} />
+
+
 
           {/* ── Instructor routes ─────────────────────────── */}
           <Route

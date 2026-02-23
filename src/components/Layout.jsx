@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import {
   LayoutDashboard, Users, CalendarDays, CreditCard, BookOpen,
   Bell, LogOut, Menu, Car, GraduationCap, ClipboardList,
-  RefreshCw, ChevronRight, Settings, Shield,
+  RefreshCw, ChevronRight, Settings, Shield, CarFront,
 } from "lucide-react";
 
 const NAV_ITEMS = {
@@ -15,6 +15,7 @@ const NAV_ITEMS = {
     { label: "Bookings",    icon: CalendarDays,     path: "/admin/bookings" },
     { label: "Payments",    icon: CreditCard,       path: "/admin/payments" },
     { label: "Approvals",   icon: ClipboardList,    path: "/admin/approvals" },
+    { label: "Fleet Management",   icon: CarFront,    path: "/admin/fleet-management" },
     { label: "Settings",    icon: Settings,         path: "/admin/settings" },
   ],
   instructor: [
